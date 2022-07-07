@@ -1,4 +1,4 @@
-from mysql-connector import connector
+from mysql import connector
 import random
 
 src = 'abcdefghijklmnopqrstuvwxyz'
