@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Var</title>
+</head>
+<body>
+<!--    <h2>{{ var }}</h2>-->
+
+<!--    <h2>{{ dict1 }}</h2>-->
+
+    {% for dkey in dict1 %}
+        <h3>{{ dkey }}</h3>
+        <h5>{{ dict1[dkey]['link'] }}</h5>
+
+<!--        {% for value in dict1[dkey] %}-->
+<!--            <h4>{{ dict1[dkey][value] }}</h4>-->
+<!--        {% endfor %}-->
+<!--        <h4>{{ dict1[dkey] }}</h4>-->
+    {% endfor %}
+</body>
+</html>
