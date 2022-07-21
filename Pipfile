@@ -7,6 +7,8 @@ name = "pypi"
 mysql = "*"
 mysql-connector = "*"
 flask = "*"
+pyquery = "*"
+requests = "*"
 
 [dev-packages]
 
