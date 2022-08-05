@@ -1,0 +1,337 @@
+<html lang="en"><script src="moz-extension://34546d03-945c-42ac-95b2-6a7dbfbd6531/page/prompt.js"></script><script src="moz-extension://34546d03-945c-42ac-95b2-6a7dbfbd6531/page/runScript.js"></script><head>
+    <title>用户管理</title>
+    <meta charset="utf-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="../static/css/pear.css">
+    <link rel="stylesheet" href="../static/css/user.css">
+    <link rel="stylesheet" href="../static/css/layout.css">
+    <link rel="stylesheet" href="../static/css/layui.css">
+    <link rel="stylesheet" href="../static/css/table.css">
+    <link rel="stylesheet" href="../static/css/button.css">
+    <link rel="stylesheet" href="../static/css/iconfont.css">
+<link id="layuicss-laydate" rel="stylesheet" href="../static/css/laydate.css?v=5.3.1" media="all">
+<link id="layuicss-layer" rel="stylesheet" href="../static/css/layer.css?v=3.6.0" media="all">
+<link id="layuicss-skincodecss" rel="stylesheet" href="../static/css/code.css?v=2" media="all">
+<style id="pear-admin-color">.light-theme .pear-nav-tree .layui-this a:hover,.light-theme .pear-nav-tree .layui-this,.light-theme .pear-nav-tree .layui-this a,.pear-nav-tree .layui-this a,.pear-nav-tree .layui-this{background-color: #5FB878!important;}.pear-admin .layui-logo .title{color:#5FB878!important;}.pear-frame-title .dot,.pear-tab .layui-this .pear-tab-active{background-color: #5FB878!important;}.bottom-nav li a:hover{background-color:#5FB878!important;}.pear-admin .layui-header .layui-nav .layui-nav-bar{background-color: #5FB878!important;}.ball-loader>span,.signal-loader>span {background-color: #5FB878!important;}.layui-header .layui-nav-child .layui-this a{background-color:#5FB878!important;color:white!important;}#preloader{background-color:#5FB878!important;}.pearone-color .color-content li.layui-this:after, .pearone-color .color-content li:hover:after {border: #5FB878 3px solid!important;}.layui-nav .layui-nav-child dd.layui-this a, .layui-nav-child dd.layui-this{background-color:#5FB878;color:white;}.pear-social-entrance {background-color:#5FB878!important}.pear-admin .pe-collaspe {background-color:#5FB878!important}.layui-fixbar li {background-color:#5FB878!important}.pear-btn-primary {background-color:#5FB878!important}.layui-input:focus,.layui-textarea:focus {border-color: #5FB878!important;box-shadow: 0 0 0 3px undefined !important;}.layui-form-checked[lay-skin=primary] i {border-color: #5FB878!important;background-color: #5FB878;}.layui-form-onswitch { border-color: #5FB878; background-color: #5FB878;}.layui-form-radio>i:hover, .layui-form-radioed>i {color: #5FB878;}.layui-laypage .layui-laypage-curr .layui-laypage-em{background-color:#5FB878!important}.layui-tab-brief>.layui-tab-more li.layui-this:after, .layui-tab-brief>.layui-tab-title .layui-this:after{border-bottom: 3px solid #5FB878!important}.layui-tab-brief>.layui-tab-title .layui-this{color:#5FB878!important}.layui-progress-bar{background-color:#5FB878}.layui-elem-quote{border-left: 5px solid #5FB878}.layui-timeline-axis{color:#5FB878}.layui-laydate .layui-this{background-color:#5FB878!important}.pear-this,.pear-text{color:#5FB878!important}.pear-back{background-color:#5FB878!important}.pear-collasped-pe{background-color:#5FB878!important}.layui-form-select dl dd.layui-this{background-color:#5FB878}.tag-item-normal{background:#5FB878!important}.step-item-head.step-item-head-active{background-color:#5FB878}.step-item-head{border: 3px solid #5FB878;}.step-item-tail i{background-color:#5FB878}.step-item-head{color:#5FB878}div[xm-select-skin=normal] .xm-select-title div.xm-select-label>span i {background-color:#5FB878!important}div[xm-select-skin=normal] .xm-select-title div.xm-select-label>span{border: 1px solid #5FB878!important;background-color:#5FB878!important}div[xm-select-skin=normal] dl dd:not(.xm-dis-disabled) i{border-color:#5FB878!important}div[xm-select-skin=normal] dl dd.xm-select-this:not(.xm-dis-disabled) i{color:#5FB878!important}div[xm-select-skin=normal].xm-form-selected .xm-select, div[xm-select-skin=normal].xm-form-selected .xm-select:hover{border-color:#5FB878!important}.layui-layer-btn a:first-child{border-color:#5FB878;background-color:#5FB878!important}.layui-form-checkbox[lay-skin=primary]:hover i{border-color:#5FB878!important}.pear-tab-menu .item:hover{background-color:#5FB878!important}.layui-form-danger:focus {border-color:#FF5722 !important}.pear-admin .user .layui-this a:hover{color:white!important}.pear-notice .layui-this{color:#5FB878!important}.layui-form-radio:hover *, .layui-form-radioed, .layui-form-radioed>i{color:#5FB878 !important}.pear-btn:hover {color: #5FB878;background-color: undefined;}.pear-btn-primary[plain] {color: #5FB878 !important;background: undefined !important;}.pear-btn-primary[plain]:hover {background-color: #5FB878!important}.light-theme .pear-nav-tree .layui-this a:hover,.light-theme .pear-nav-tree .layui-this,.light-theme .pear-nav-tree .layui-this a {background-color:undefined!important;color:#5FB878!important;}.light-theme .pear-nav-tree .layui-this{ border-right: 3px solid #5FB878!important}.loader:after {background:#5FB878}</style></head>
+<body class="pear-container" style="">
+<div class="layui-card">
+    <div class="layui-card-body">
+        <form class="layui-form" action="" lay-filter="user-query-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label">用户</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="realName" placeholder="" class="layui-input">
+                </div>
+                <label class="layui-form-label">账号</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="username" placeholder="" class="layui-input">
+                </div>
+                <button class="pear-btn pear-btn-md pear-btn-primary" lay-submit="" lay-filter="user-query">
+                    <i class="layui-icon layui-icon-search"></i>
+                    查询
+                </button>
+                <button type="reset" class="pear-btn pear-btn-md">
+                    <i class="layui-icon layui-icon-refresh"></i>
+                    重置
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="user-left user-collasped">
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <div class="button button-primary user-group" user-group=""> 全 部 用 户</div>
+            <div class="button button-default user-group" user-group="-1"> 默 认 分 组</div>
+            <div style="overflow: auto">
+                <ul id="dept-tree" class="dept-tree" data-id="0" style="width: 260px;"><li class="d-click-checkbar dtree-nav-item dtree-nav-first-line" data-id="1" data-pid="0" dtree-id="dept-tree" data-index="1" dtree-hide="false"><div class="dtree-nav-div dtree-laySimple-item" data-id="1" dtree-id="dept-tree" dtree-click="itemNodeClick" data-basic="" data-record="" dtree-disabled="false" dtree-hide="false" d-contextmenu="false"><i class="dtreefont dtree-icon-xiangxia1 dtree-laySimple-dtreefont dtree-laySimple-ficon" data-spread="open" data-id="1" dtree-id="dept-tree"></i><i class="dtreefont dtree-icon-null-open dtreefont-special dtree-laySimple-dtreefont dtree-laySimple-icon" data-spread="open" data-id="1" dtree-id="dept-tree" data-iconclass=""></i><cite class="t-click " data-id="1" data-leaf="node" dtree-disabled="false" data-title="总公司">总公司</cite></div><ul class="dtree-nav-ul-sid dtree-nav-show" data-id="1" dtree-id="dept-tree"><li class="d-click-checkbar dtree-nav-item dtree-nav-line" data-id="4" data-pid="1" dtree-id="dept-tree" data-index="2" dtree-hide="false"><div class="dtree-nav-div dtree-laySimple-item" data-id="4" dtree-id="dept-tree" dtree-click="itemNodeClick" data-basic="" data-record="" dtree-disabled="false" dtree-hide="false" d-contextmenu="false"><i class="dtreefont dtree-icon-xiangyou dtree-laySimple-dtreefont dtree-laySimple-ficon" data-spread="close" data-id="4" dtree-id="dept-tree" data-iconclass=""></i><i class="dtreefont dtree-icon-null-close dtreefont-special dtree-laySimple-dtreefont dtree-laySimple-icon" data-spread="close" data-id="4" dtree-id="dept-tree" data-iconclass=""></i><cite class="t-click " data-id="4" data-leaf="node" dtree-disabled="false" data-title="济南分公司">济南分公司</cite></div><ul class="dtree-nav-ul-sid" data-id="4" dtree-id="dept-tree"><li class="d-click-checkbar dtree-nav-item dtree-nav-line" data-id="7" data-pid="4" dtree-id="dept-tree" data-index="3" dtree-hide="false"><div class="dtree-nav-div dtree-laySimple-item" data-id="7" dtree-id="dept-tree" dtree-click="itemNodeClick" data-basic="" data-record="" dtree-disabled="false" dtree-hide="false" d-contextmenu="false"><i class="dtreefont dtree-icon-null dtree-icon-hide dtree-laySimple-dtreefont dtree-laySimple-ficon" data-spread="last" data-id="7" dtree-id="dept-tree"></i><i class="dtreefont dtree-icon-null dtreefont-special dtree-laySimple-dtreefont dtree-laySimple-icon" data-spread="last" data-id="7" dtree-id="dept-tree" data-iconclass=""></i><cite class="t-click " data-id="7" data-leaf="leaf" dtree-disabled="false" data-title="济南分公司开发部">济南分公司开发部</cite></div><ul class="dtree-nav-ul-sid" data-id="7" dtree-id="dept-tree"></ul></li></ul></li><li class="d-click-checkbar dtree-nav-item dtree-nav-last-line" data-id="5" data-pid="1" dtree-id="dept-tree" data-index="2" dtree-hide="false"><div class="dtree-nav-div dtree-laySimple-item" data-id="5" dtree-id="dept-tree" dtree-click="itemNodeClick" data-basic="" data-record="" dtree-disabled="false" dtree-hide="false" d-contextmenu="false"><i class="dtreefont dtree-icon-xiangyou dtree-laySimple-dtreefont dtree-laySimple-ficon" data-spread="close" data-id="5" dtree-id="dept-tree" data-iconclass=""></i><i class="dtreefont dtree-icon-null-close dtreefont-special dtree-laySimple-dtreefont dtree-laySimple-icon" data-spread="close" data-id="5" dtree-id="dept-tree" data-iconclass=""></i><cite class="t-click " data-id="5" data-leaf="node" dtree-disabled="false" data-title="唐山分公司">唐山分公司</cite></div><ul class="dtree-nav-ul-sid" data-id="5" dtree-id="dept-tree"><li class="d-click-checkbar dtree-nav-item dtree-nav-last-line" data-id="8" data-pid="5" dtree-id="dept-tree" data-index="3" dtree-hide="false"><div class="dtree-nav-div dtree-laySimple-item" data-id="8" dtree-id="dept-tree" dtree-click="itemNodeClick" data-basic="" data-record="" dtree-disabled="false" dtree-hide="false" d-contextmenu="false"><i class="dtreefont dtree-icon-null dtree-icon-hide dtree-laySimple-dtreefont dtree-laySimple-ficon" data-spread="last" data-id="8" dtree-id="dept-tree"></i><i class="dtreefont dtree-icon-null dtreefont-special dtree-laySimple-dtreefont dtree-laySimple-icon" data-spread="last" data-id="8" dtree-id="dept-tree" data-iconclass=""></i><cite class="t-click " data-id="8" data-leaf="leaf" dtree-disabled="false" data-title="唐山测试部">唐山测试部</cite></div><ul class="dtree-nav-ul-sid" data-id="8" dtree-id="dept-tree"></ul></li></ul></li></ul></li></ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="user-main user-collasped">
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <table id="user-table" lay-filter="user-table"></table><div class="layui-form layui-border-box layui-table-view layui-table-view-1" lay-filter="LAY-TABLE-FORM-DF-1" lay-id="user-table" style="height: 285px;"><div class="layui-table-tool"><div class="layui-table-tool-temp"> <button class="pear-btn pear-btn-primary pear-btn-md" lay-event="add"> <i class="pear-icon pear-icon-add"></i> 新增 </button> <button class="pear-btn pear-btn-md" lay-event="batchRemove"> <i class="pear-icon pear-icon-ashbin"></i> 删除 </button> <button class="pear-btn pear-btn-md" lay-event="collasped"> <i class="pear-icon pear-icon-modular"></i> 高级 </button> </div><div class="layui-table-tool-self"><div class="layui-inline" title="undefined" lay-event="refresh"><i class="layui-icon layui-icon-refresh"></i></div><div class="layui-inline" title="筛选列" lay-event="LAYTABLE_COLS"><i class="layui-icon layui-icon-cols"></i></div><div class="layui-inline" title="打印" lay-event="LAYTABLE_PRINT"><i class="layui-icon layui-icon-print"></i></div><div class="layui-inline" title="导出" lay-event="LAYTABLE_EXPORT"><i class="layui-icon layui-icon-export"></i></div></div></div><div class="layui-table-box"><div class="layui-table-header"><table class="layui-table" lay-skin="line" cellspacing="0" cellpadding="0" border="0"><thead><tr><th data-field="0" data-key="1-0-0" data-unresize="true" class=" layui-table-col-special"><div class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox"><input type="checkbox" name="layTableCheckbox" lay-skin="primary" lay-filter="layTableAllChoose"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div></div></th><th data-field="realname" data-key="1-0-1" class=""><div class="layui-table-cell laytable-cell-1-0-1" align="center"><span>姓名</span></div></th><th data-field="username" data-key="1-0-2" class=""><div class="layui-table-cell laytable-cell-1-0-2" align="center"><span>账号</span></div></th><th data-field="dept" data-key="1-0-3" class=""><div class="layui-table-cell laytable-cell-1-0-3" align="center"><span>部门</span></div></th><th data-field="enable" data-key="1-0-4" class=""><div class="layui-table-cell laytable-cell-1-0-4" align="center"><span>启用</span></div></th><th data-field="create_at" data-key="1-0-5" class=""><div class="layui-table-cell laytable-cell-1-0-5" align="center"><span>注册时间</span></div></th><th data-field="update_at" data-key="1-0-6" class=""><div class="layui-table-cell laytable-cell-1-0-6" align="center"><span>更新时间</span></div></th><th data-field="7" data-key="1-0-7" class=" layui-table-col-special"><div class="layui-table-cell laytable-cell-1-0-7" align="center"><span>操作</span></div></th></tr></thead></table></div><div class="layui-table-body layui-table-main" style="height: 138px;"><table class="layui-table" lay-skin="line" cellspacing="0" cellpadding="0" border="0"><tbody><tr data-index="0" class=""><td data-field="0" data-key="1-0-0" class="layui-table-col-special"><div class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox"><input type="checkbox" name="layTableCheckbox" lay-skin="primary"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div></div></td><td data-field="realname" data-key="1-0-1" class="" align="center"><div class="layui-table-cell laytable-cell-1-0-1">超级管理</div></td><td data-field="username" data-key="1-0-2" class="" align="center"><div class="layui-table-cell laytable-cell-1-0-2">admin</div></td><td data-field="dept" data-key="1-0-3" class="" align="center"><div class="layui-table-cell laytable-cell-1-0-3">总公司</div></td><td data-field="enable" data-key="1-0-4" data-content="1" class="" align="center"><div class="layui-table-cell laytable-cell-1-0-4"> <input type="checkbox" name="enable" value="1" lay-skin="switch" lay-text="启用|禁用" lay-filter="user-enable" checked=""><div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch"><em>启用</em><i></i></div> </div></td><td data-field="create_at" data-key="1-0-5" data-content="" class="" align="center"><div class="layui-table-cell laytable-cell-1-0-5">  </div></td><td data-field="update_at" data-key="1-0-6" data-content="2021-06-01T17:28:55" class="" align="center"><div class="layui-table-cell laytable-cell-1-0-6"> 2021-06-01 17:28:55 </div></td><td data-field="7" data-key="1-0-7" data-off="true" class="layui-table-col-special" align="center"><div class="layui-table-cell laytable-cell-1-0-7"> <button class="pear-btn pear-btn-primary pear-btn-sm" lay-event="edit"><i class="pear-icon pear-icon-edit"></i> </button> <button class="pear-btn pear-btn-danger pear-btn-sm" lay-event="remove"><i class="pear-icon pear-icon-ashbin"></i> </button> </div></td></tr><tr data-index="1" class=""><td data-field="0" data-key="1-0-0" class="layui-table-col-special"><div class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox"><input type="checkbox" name="layTableCheckbox" lay-skin="primary"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div></div></td><td data-field="realname" data-key="1-0-1" class="" align="center"><div class="layui-table-cell laytable-cell-1-0-1">超级管理</div></td><td data-field="username" data-key="1-0-2" class="" align="center"><div class="layui-table-cell laytable-cell-1-0-2">test</div></td><td data-field="dept" data-key="1-0-3" class="" align="center"><div class="layui-table-cell laytable-cell-1-0-3">总公司</div></td><td data-field="enable" data-key="1-0-4" data-content="1" class="" align="center"><div class="layui-table-cell laytable-cell-1-0-4"> <input type="checkbox" name="enable" value="7" lay-skin="switch" lay-text="启用|禁用" lay-filter="user-enable" checked=""><div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch"><em>启用</em><i></i></div> </div></td><td data-field="create_at" data-key="1-0-5" data-content="2021-03-22T20:03:42" class="" align="center"><div class="layui-table-cell laytable-cell-1-0-5"> 2021-03-22 20:03:42 </div></td><td data-field="update_at" data-key="1-0-6" data-content="2021-06-01T17:29:47" class="" align="center"><div class="layui-table-cell laytable-cell-1-0-6"> 2021-06-01 17:29:47 </div></td><td data-field="7" data-key="1-0-7" data-off="true" class="layui-table-col-special" align="center"><div class="layui-table-cell laytable-cell-1-0-7"> <button class="pear-btn pear-btn-primary pear-btn-sm" lay-event="edit"><i class="pear-icon pear-icon-edit"></i> </button> <button class="pear-btn pear-btn-danger pear-btn-sm" lay-event="remove"><i class="pear-icon pear-icon-ashbin"></i> </button> </div></td></tr><tr data-index="2" class=""><td data-field="0" data-key="1-0-0" class="layui-table-col-special"><div class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox"><input type="checkbox" name="layTableCheckbox" lay-skin="primary"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div></div></td><td data-field="realname" data-key="1-0-1" class="" align="center"><div class="layui-table-cell laytable-cell-1-0-1">风</div></td><td data-field="username" data-key="1-0-2" class="" align="center"><div class="layui-table-cell laytable-cell-1-0-2">wind</div></td><td data-field="dept" data-key="1-0-3" class="" align="center"><div class="layui-table-cell laytable-cell-1-0-3">济南分公司开发部</div></td><td data-field="enable" data-key="1-0-4" data-content="1" class="" align="center"><div class="layui-table-cell laytable-cell-1-0-4"> <input type="checkbox" name="enable" value="8" lay-skin="switch" lay-text="启用|禁用" lay-filter="user-enable" checked=""><div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch"><em>启用</em><i></i></div> </div></td><td data-field="create_at" data-key="1-0-5" data-content="2021-06-01T17:30:39" class="" align="center"><div class="layui-table-cell laytable-cell-1-0-5"> 2021-06-01 17:30:39 </div></td><td data-field="update_at" data-key="1-0-6" data-content="2021-06-01T17:30:52" class="" align="center"><div class="layui-table-cell laytable-cell-1-0-6"> 2021-06-01 17:30:52 </div></td><td data-field="7" data-key="1-0-7" data-off="true" class="layui-table-col-special" align="center"><div class="layui-table-cell laytable-cell-1-0-7"> <button class="pear-btn pear-btn-primary pear-btn-sm" lay-event="edit"><i class="pear-icon pear-icon-edit"></i> </button> <button class="pear-btn pear-btn-danger pear-btn-sm" lay-event="remove"><i class="pear-icon pear-icon-ashbin"></i> </button> </div></td></tr></tbody></table></div></div><div class="layui-table-page"><div class="layui-inline layui-table-pageview" id="layui-table-page1"><div class="layui-box layui-laypage layui-laypage-default" id="layui-laypage-1"><a href="javascript:;" class="layui-laypage-prev layui-disabled" data-page="0"><i class="layui-icon"></i></a><span class="layui-laypage-curr"><em class="layui-laypage-em"></em><em>1</em></span><a href="javascript:;" class="layui-laypage-next layui-disabled" data-page="2"><i class="layui-icon"></i></a><span class="layui-laypage-skip">到第<input type="text" min="1" value="1" class="layui-input">页<button type="button" class="layui-laypage-btn">确定</button></span><span class="layui-laypage-count">共 3 条</span><span class="layui-laypage-limits"><select lay-ignore=""><option value="10" selected="">10 条/页</option><option value="20">20 条/页</option><option value="30">30 条/页</option><option value="40">40 条/页</option><option value="50">50 条/页</option><option value="60">60 条/页</option><option value="70">70 条/页</option><option value="80">80 条/页</option><option value="90">90 条/页</option></select></span></div></div></div><style>.laytable-cell-1-0-0{ width: 48px; }.laytable-cell-1-0-1{ width: 110px; }.laytable-cell-1-0-2{  }.laytable-cell-1-0-3{  }.laytable-cell-1-0-4{ width: 120px; }.laytable-cell-1-0-5{  }.laytable-cell-1-0-6{  }.laytable-cell-1-0-7{ width: 130px; }</style></div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/html" id="user-toolbar">
+    
+        <button class="pear-btn pear-btn-primary pear-btn-md" lay-event="add">
+            <i class="pear-icon pear-icon-add"></i>
+            新增
+        </button>
+    
+    
+        <button class="pear-btn pear-btn-md" lay-event="batchRemove">
+            <i class="pear-icon pear-icon-ashbin"></i>
+            删除
+        </button>
+    
+    <button class="pear-btn pear-btn-md" lay-event="collasped">
+        <i class="pear-icon pear-icon-modular"></i>
+        高级
+    </button>
+</script>
+
+
+<script type="text/html" id="user-bar">
+    
+        <button class="pear-btn pear-btn-primary pear-btn-sm" lay-event="edit"><i class="pear-icon pear-icon-edit"></i>
+        </button>
+    
+    
+        <button class="pear-btn pear-btn-danger pear-btn-sm" lay-event="remove"><i
+                class="pear-icon pear-icon-ashbin"></i>
+        </button>
+    
+</script>
+
+
+<script type="text/html" id="user-enable">
+    <input type="checkbox" name="enable" value="{{ d.id }}" lay-skin="switch" lay-text="启用|禁用"
+           lay-filter="user-enable"
+            {{# if(d.enable==1){ }} checked {{# } }} />
+</script>
+
+
+<script type="text/html" id="user-createTime">
+      {{layui.util.toDateString(d.create_at,  "yyyy-MM-dd HH:mm:ss")}}
+</script>
+
+
+<script type="text/html" id="user-updateTime">
+      {{layui.util.toDateString(d.update_at,  "yyyy-MM-dd HH:mm:ss")}}
+</script>
+
+<script src="../static/js/layui.js"></script>
+<script src="../static/js/pear.js"></script>
+
+<script>
+  layui.use(['table', 'dtree', 'form', 'jquery', 'popup', 'common'], function () {
+    let table = layui.table
+    let form = layui.form
+    let $ = layui.jquery
+    let dtree = layui.dtree
+    let popup = layui.popup
+    let common = layui.common
+    let MODULE_PATH = '/admin/user/'
+
+    // 表格数据
+    let cols = [
+      [
+        
+          { type: 'checkbox' },
+        
+        { title: '姓名', field: 'realname', align: 'center', width: 110 },
+        { title: '账号', field: 'username', align: 'center' },
+        { title: '部门', field: 'dept', align: 'center' },
+        { title: '启用', field: 'enable', align: 'center', templet: '#user-enable', width: 120 },
+        { title: '注册时间', field: 'create_at', templet: '#user-createTime', align: 'center' },
+        { title: '更新时间', field: 'update_at', templet: '#user-updateTime', align: 'center' },
+        { title: '操作', toolbar: '#user-bar', align: 'center', width: 130 }
+      ]
+    ]
+
+    // 渲染表格数据
+    table.render({
+      elem: '#user-table',
+      url: MODULE_PATH + 'data',
+      page: true,
+      cols: cols,
+      skin: 'line',
+      height: 'full-148',
+      toolbar: '#user-toolbar', /*工具栏*/
+      text: { none: '暂无人员信息' },
+      defaultToolbar: [{ layEvent: 'refresh', icon: 'layui-icon-refresh' }, 'filter', 'print', 'exports'] /*默认工具栏*/
+    })
+
+    // 公司部门树状图菜单
+    dtree.render({
+      elem: '#dept-tree',
+      method: 'get',
+      url: '/dept/tree',
+      dataFormat: 'list',
+      line: true,
+      skin: 'laySimple',
+      icon: '-1',
+      response: { treeId: 'deptId', parentId: 'parentId', title: 'deptName' },
+    })
+
+    // 菜单栏渲染
+    dtree.on('node(\'dept-tree\')', function (obj) {
+      let field = form.val('user-query-form') /*用户账号查询*/
+      field.deptId = obj.param.nodeId
+      window.refresh(field)
+    })
+
+    //
+    $('.user-group').click(function () {
+      let group = $(this).attr('user-group')
+      let field = form.val('user-query-form')
+      if (group === '-1') {
+        field.deptId = group
+        $(this).removeClass('button-default')
+        $(this).prev().removeClass('button-primary')
+        $(this).prev().addClass('button-default')
+        $(this).addClass('button-primary')
+      } else {
+        field.deptId = group
+        $(this).removeClass('button-default')
+        $(this).next().removeClass('button-primary')
+        $(this).next().addClass('button-default')
+        $(this).addClass('button-primary')
+      }
+      window.refresh(field)
+    })
+
+    table.on('tool(user-table)', function (obj) {
+      if (obj.event === 'remove') {
+        window.remove(obj)
+      } else if (obj.event === 'edit') {
+        window.edit(obj)
+      }
+    })
+
+    table.on('toolbar(user-table)', function (obj) {
+      if (obj.event === 'add') {
+        window.add()
+      } else if (obj.event === 'refresh') {
+        window.refresh()
+      } else if (obj.event === 'batchRemove') {
+        window.batchRemove(obj)
+      } else if (obj.event === 'collasped') {
+        $('.user-left').toggleClass('user-collasped')
+        $('.user-main').toggleClass('user-collasped')
+        table.resize()
+      }
+    })
+
+    form.on('submit(user-query)', function (data) {
+      window.refresh(data.field)
+      return false
+    })
+
+    form.on('switch(user-enable)', function (obj) {
+      let operate
+      if (obj.elem.checked) {
+        operate = 'enable'
+      } else {
+        operate = 'disable'
+      }
+      let loading = layer.load()
+      $.ajax({
+        url: '/admin/user/' + operate,
+        data: JSON.stringify({ userId: this.value }),
+        dataType: 'json',
+        contentType: 'application/json',
+        type: 'put',
+        success: function (result) {
+          layer.close(loading)
+          if (result.success) {
+            popup.success(result.msg)
+          } else {
+            popup.failure(result.msg)
+          }
+        }
+      })
+    })
+
+    window.add = function () {
+      layer.open({
+        type: 2,
+        title: '新增',
+        shade: 0.1,
+        area: ['550px', '550px'],
+        content: MODULE_PATH + 'add'
+      })
+    }
+
+    window.edit = function (obj) {
+      layer.open({
+        type: 2,
+        title: '修改',
+        shade: 0.1,
+        area: ['550px', '500px'],
+        content: MODULE_PATH + 'edit/' + obj.data['id']
+      })
+    }
+
+    window.remove = function (obj) {
+      layer.confirm('确定要删除该用户', { icon: 3, title: '提示' }, function (index) {
+        layer.close(index)
+        let loading = layer.load()
+        $.ajax({
+          url: MODULE_PATH + 'remove/' + obj.data['id'],
+          dataType: 'json',
+          type: 'delete',
+          success: function (result) {
+            layer.close(loading)
+            if (result.success) {
+              popup.success(result.msg, function () {
+                obj.del()
+              })
+            } else {
+              popup.failure(result.msg)
+            }
+          }
+        })
+      })
+    }
+
+    window.batchRemove = function (obj) {
+      let data = table.checkStatus(obj.config.id).data
+      if (data.length === 0) {
+        layer.msg('未选中数据', {
+          icon: 3,
+          time: 1000
+        })
+        return false
+      }
+      var ids = []
+      var hasCheck = table.checkStatus('user-table')
+      var hasCheckData = hasCheck.data
+      if (hasCheckData.length > 0) {
+        $.each(hasCheckData, function (index, element) {
+          ids.push(element.id)
+        })
+      }
+      
+      layer.confirm('确定要删除选中角色', {
+        icon: 3,
+        title: '提示'
+      }, function (index) {
+        layer.close(index)
+        let loading = layer.load()
+        $.ajax({
+
+          url: MODULE_PATH + 'batchRemove',
+          data: { ids: ids },
+          dataType: 'json',
+          type: 'delete',
+          success: function (result) {
+            layer.close(loading)
+            if (result.success) {
+              popup.success(result.msg, function () {
+                table.reload('user-table')
+              })
+            } else {
+              popup.failure(result.msg)
+            }
+          }
+        })
+      })
+    }
+
+    window.refresh = function (param) {
+      table.reload('user-table', { where: param })
+    }
+  })
+</script>
+<div class="layui-layer-move" id="layui-layer-move"></div></body></html>
