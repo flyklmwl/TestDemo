@@ -1,6 +1,11 @@
 from flask import Flask
 from flask import render_template
 
+
+# 前后台的数据传输
+# __name__ 就是该文件的文件名
+
+
 app = Flask(__name__)
 
 

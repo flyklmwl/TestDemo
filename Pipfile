@@ -9,6 +9,7 @@ mysql-connector = "*"
 flask = "*"
 pyquery = "*"
 requests = "*"
+pipfile = "*"
 
 [dev-packages]
 
