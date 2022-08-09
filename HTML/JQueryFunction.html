@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div style="width: 70%; margin: auto">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th id="id" scope="row"><input type="checkbox" name="" id=""></th>
+            <td id="name">Mark</td>
+            <td id="sex">Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row"><input type="checkbox" name="" id=""></th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row"><input type="checkbox" name="" id=""></th>
+            <td colspan="2">Larry the Bird  <input id="testinput" type='text'value=''  /></td>
+            <td>@twitter1</td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="button" name="" id="" class="btn btn-primary" onclick="edit()">编辑</button>
+    </div>
+  </body>
+
+  <script>
+    function edit() {
+      th = $("input[type='checkbox']:checked")
+      a = $("<a id='finished' onclick='fin()'>完成</a>")
+
+      // $("#id").siblings().each(function(){
+      //   value = ($(this).text())
+      //   input = $("<input type='text'value='" + value + "'/>");
+      //   $(this).html(input)
+      //   //alert("1")
+      // })
+
+      //$("input[type='checkbox']:checked")
+      
+      th.parent().siblings().each(function(){
+        value = ($(this).text())
+        input = $("<input type='text'value='" + value + "'/>");
+        $(this).html(input)
+        //alert("1")
+      })
+
+      th.parent().html(a)
+    }
+
+    function fin() {
+      $("#finished").parent().siblings().each(function(){
+        value = ($(this).children().val())
+        $(this).html(value)
+      })
+
+      input = $("<input type='checkbox' />")
+
+      $('#finished').parent().html(input)
+    }
+    
+    $("#testinput").change(function(){
+      alert("123")
+    })
+  </script>
+</html>
