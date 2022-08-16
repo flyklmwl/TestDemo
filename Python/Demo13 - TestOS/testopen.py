@@ -28,7 +28,7 @@ def getdb():
     data_list = []
     sql = "select link from modulerinfo"
     for link in cur.execute(sql):
-      link = link[0].lstrip("http://moduler.windcs.cn/").replace("%20", " ").rstrip("/index.html")
+      link = link[0][25:].replace("%20", " ")[:-11]
       data_list.append(link)
     return data_list
 
@@ -44,6 +44,4 @@ if __name__ == '__main__':
     gettxt()
     # data_list1 = getdb()
     # insertdb(data_list1)
-    
-    
     

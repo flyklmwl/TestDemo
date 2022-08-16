@@ -13,6 +13,9 @@ def teststrip():
     fstr = "http://www.baidu.com/"
     ffstr = tstr.lstrip(fstr)
     print(ffstr)
+    # 截取25个字符以后的字符串
+    fffstr = cstring[25:]
+    print(fffstr)
 
     ss = 'hello, world!!!'
     print(ss.strip('hello, '))
@@ -28,8 +31,8 @@ def testrep():
     print(re.match("hello", ss).group())
 
 def main():
-    # teststrip()
-    testrep()
+    teststrip()
+    # testrep()
 
 
 if __name__ == '__main__':
