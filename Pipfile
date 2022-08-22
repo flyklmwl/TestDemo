@@ -10,6 +10,10 @@ flask = "*"
 pyquery = "*"
 requests = "*"
 pipfile = "*"
+rarfile = "*"
+py7z = "*"
+py7zr = "*"
+paramiko = "*"
 
 [dev-packages]
 
