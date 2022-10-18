@@ -14,6 +14,7 @@ rarfile = "*"
 py7z = "*"
 py7zr = "*"
 paramiko = "*"
+selenium = "*"
 
 [dev-packages]
 
