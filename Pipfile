@@ -15,6 +15,7 @@ py7z = "*"
 py7zr = "*"
 paramiko = "*"
 selenium = "*"
+tqdm = {version = "*", index = "pypi"}
 
 [dev-packages]
 
